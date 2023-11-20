@@ -26,14 +26,44 @@ public class App {
         // Inicializo el lector.
         Scanner lector = new Scanner(System.in);
         
-        // Pido al usuario que introduzca sus datos (Atributos del objeto p1 de clase Persona).
+        /* Pido al usuario que introduzca sus datos (Atributos del objeto p1 de clase Persona).
+
+        Escribo los datos introducidos por el usuario, en los atributos del objeto p1.
+        Como los atributos son privados, utilizo los métodos setter de la clase Persona.
+        
+        Utilizo los diferentes métodos de validación para el email, el DNI, el teléfono y la fecha de nacimiento.
+        */
         System.out.println("Introduzca el nombre: ");
         String nombre = lector.nextLine();
-
-        /* Escribo los datos introducidos por el usuario, en los atributos del objeto p1.
-        Como los atributos son privados, utilizo los métodos setter de la clase Persona. */
         p1.setNombre(nombre);
-            
+
+        System.out.println("Introduzca los apellidos: ");
+        String apellidos = lector.nextLine();
+        p1.setApellidos(apellidos);
+
+        System.out.println("Introduzca la edad: ");
+        int edad = lector.nextInt();
+        p1.setEdad(edad);
+
+        System.out.println("Introduzca el email: ");
+        String email = lector.nextLine();
+        p1.setEmail(email);
+
+        System.out.println("Introduzca el DNI: ");
+        String dni = lector.nextLine();
+
+        System.out.println("Introduzca el teléfono (debe empezar por el prefijo +34): ");
+        String telefono = lector.nextLine();
+        p1.setTelefono(telefono);
+
+        System.out.println("Introduzca la fecha de nacimiento (el formato debe ser dd/mm/aaaa): ");
+        String fechaNacimiento = lector.nextLine();
+        p1.setFechaNacimiento(fechaNacimiento);
+
+        
+        
+        
+        
     }
 }
 
