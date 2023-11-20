@@ -31,7 +31,7 @@ public class App {
         Escribo los datos introducidos por el usuario, en los atributos del objeto p1.
         Como los atributos son privados, utilizo los métodos setter de la clase Persona.
         
-        Utilizo los diferentes métodos de validación para el email, el DNI, el teléfono y la fecha de nacimiento.
+        Utilizo los métodos de validación para el email, el DNI, el teléfono y la fecha de nacimiento.
         */
         System.out.println("Introduzca el nombre: ");
         String nombre = lector.nextLine();
@@ -60,10 +60,12 @@ public class App {
         String fechaNacimiento = lector.nextLine();
         p1.setFechaNacimiento(fechaNacimiento);
 
+        // Avisa si el email no es válido.
+        if (p1.validadorEmail() == false)
+            System.out.println("El email no es válido");
         
         
-        
-        
+       lector.close(); 
     }
 }
 

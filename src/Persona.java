@@ -1,6 +1,5 @@
 // Importo las clases para compilar y validad expresiones regulares.
 import java.util.regex.Pattern;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class Persona {
@@ -94,5 +93,36 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    //* Método personalizado para la validación del email.
+    public boolean validadorEmail() {
+        /* Patrón REGEX (explicación detallada):
+
+            ^ - Inicio del String
+            () - Debe cumplirse todo lo que contenga
+            ([a-zA-Z0-9_-]|\\.){1,64} - (Usuario) Puede contener de 1 a 64 mayúsculas, minúsculas, dígitos, '_', '-' o puntos
+            [@] - A continuación tiene que haber una @
+            ([a-zA-Z0-9_-]|\\.){1,64} - (Organización) Puede contener de 1 a 255 mayúsculas, minúsculas, dígitos, '_', '-' o puntos
+            [\\.] - A continuación tiene que haber un punto
+            ([a-zA-Z]{2,4}) - (Dominio) Puede contener de 1 a 4 letras
+            $ - Final del String
+        */
+        final String PATRON = "^(([a-zA-Z0-9_-]|\\.){1,64}[@]([a-zA-Z0-9_-]|\\.){1,255}[\\.]([a-zA-Z]{2,4}))$";
+
+        // Utilizo el email introducido lara su validación.       
+        String email = this.email;
+
+        // Compilo el patrón, comparo el email introducido con el patrón y guardo el resultado en boolean emailOK.
+        Pattern p = Pattern.compile(PATRON);
+        Matcher m = p.matcher(email);
+        boolean emailOk = m.matches();
+
+        // Registro el resultado de la validación en boolean emailComprobado.
+        if ((emailOk)) {
+            return(true);
+        }
+        else {
+            return(false);
+        }
+    }
     
 }
