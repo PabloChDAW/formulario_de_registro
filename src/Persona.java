@@ -146,6 +146,11 @@ public class Persona {
 
         // Utilizo el DNI introducido para su validación.       
         String dni = this.dni;
+        
+        // Para evitar una excepción en caso de que el DNI introducido tenga menos de 9 caracteres:
+        if (dni.length() < 9) {
+            return(false);
+        }
 
         // Selecciona los números del String dni y los convierte en un entero con el método parseInt
         String dniSinLetra = dni.substring(0,8);

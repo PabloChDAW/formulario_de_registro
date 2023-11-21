@@ -53,12 +53,21 @@ public class App {
 
             // Avisa si el email no es válido.
             if (p1.validadorEmail() == false)
-            System.out.println("El email no es válido");
+            System.out.println("El email no es válido.");
         }
         while (p1.validadorEmail() == false);
 
-        System.out.println("Introduzca el DNI: ");
-        String dni = lector.next();
+        // Mismo bucle para el DNI.
+        do {
+            System.out.println("Introduzca el DNI: ");
+            String dni = lector.next();
+            p1.setDni(dni);
+
+            // Avisa si el DNI no es válido.
+            if (p1.validadorDni() == false)
+            System.out.println("El DNI no es válido.");
+            }
+        while (p1.validadorDni() == false);
 
         System.out.println("Introduzca el teléfono (debe empezar por el prefijo +34): ");
         String telefono = lector.next();
