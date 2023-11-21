@@ -45,24 +45,30 @@ public class App {
         int edad = lector.nextInt();
         p1.setEdad(edad);
 
-        System.out.println("Introduzca el email: ");
-        String email = lector.next();   // El método nextLine no funciona aquí, desconozco el motivo. El método next sí.
-        p1.setEmail(email);
+        // Bucle que se repite hasta que se introduzca un email válido.
+        do {
+            System.out.println("Introduzca el email: ");
+            String email = lector.next();   // El método nextLine no funciona aquí, desconozco el motivo. El método next sí.
+            p1.setEmail(email);
+
+            // Avisa si el email no es válido.
+            if (p1.validadorEmail() == false)
+            System.out.println("El email no es válido");
+        }
+        while (p1.validadorEmail() == false);
 
         System.out.println("Introduzca el DNI: ");
-        String dni = lector.nextLine();
+        String dni = lector.next();
 
         System.out.println("Introduzca el teléfono (debe empezar por el prefijo +34): ");
-        String telefono = lector.nextLine();
+        String telefono = lector.next();
         p1.setTelefono(telefono);
 
         System.out.println("Introduzca la fecha de nacimiento (el formato debe ser dd/mm/aaaa): ");
-        String fechaNacimiento = lector.nextLine();
+        String fechaNacimiento = lector.next();
         p1.setFechaNacimiento(fechaNacimiento);
 
-        // Avisa si el email no es válido.
-        if (p1.validadorEmail() == false)
-            System.out.println("El email no es válido");
+        
         
         
        lector.close(); 
