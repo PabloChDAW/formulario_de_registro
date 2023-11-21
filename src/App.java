@@ -46,7 +46,7 @@ public class App {
         p1.setEdad(edad);
 
         System.out.println("Introduzca el email: ");
-        String email = lector.nextLine();
+        String email = lector.next();   // El método nextLine no funciona aquí, desconozco el motivo. El método next sí.
         p1.setEmail(email);
 
         System.out.println("Introduzca el DNI: ");
